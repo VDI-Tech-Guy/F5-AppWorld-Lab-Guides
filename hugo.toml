@@ -1,0 +1,19 @@
+baseURL = 'https://f5.com/'
+languageCode = 'en-us'
+title = 'F5 AppWorld 2026 Lab Guides'
+enableGitInfo = true
+
+[caches]
+  [caches.modules]
+    maxAge = -1
+
+[markup]
+  [markup.rst]
+    smartQuotes = true
+
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = false
+
+[security]
+  exec.allow = ["rst2html", "git", "go"]
