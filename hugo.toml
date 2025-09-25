@@ -7,13 +7,14 @@ enableGitInfo = true
   [caches.modules]
     maxAge = -1
 
-[markup]
-  [markup.rst]
-    smartQuotes = true
+[module]
+  [[module.imports]]
+    path="github.com/nginxinc/nginx-hugo-theme"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     guessSyntax = true
     noClasses = false
-
-[security]
-  exec.allow = ["rst2html", "git", "go"]
