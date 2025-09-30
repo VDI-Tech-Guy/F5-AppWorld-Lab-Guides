@@ -1,6 +1,6 @@
 # Contributing to F5 AppWorld Lab Guides
 
-This repository uses Hugo as the static site generator with reStructuredText (RST) for content.
+This repository uses Hugo as the static site generator with Markdown (md) for content.
 
 ## Prerequisites
 
@@ -11,14 +11,9 @@ Before contributing, ensure you have the following installed:
   brew install hugo
   ```
 
-- **Docutils**: Required for RST processing.
-  ```
-  brew install docutils
-  ```
-
 ## Writing Content
 
-Content is written in RST format and placed in the `content/` directory.
+Content is written in markdown format and placed in the `content/` directory.
 
 ### Frontmatter
 
@@ -33,24 +28,6 @@ title: "Example Lab"
 date: 23-09-2025
 draft: false
 ---
-```
-
-#### TOML Frontmatter
-```
-+++
-title = "Example Lab"
-date = 23-09-2025
-draft = false
-+++
-```
-
-#### JSON Frontmatter
-```
-{
-  "title": "Example Lab",
-  "date": "23-09-2025",
-  "draft": false
-}
 ```
 
 Common frontmatter fields:
@@ -77,7 +54,7 @@ For more on Hugo, visit [Hugo Documentation](https://gohugo.io/documentation/).
 
 ## Shortcodes
 
-Hugo shortcodes are reusable snippets of content that can be embedded in your RST files. They allow you to add dynamic elements like call-outs, tabs, or custom components without repeating code.
+Hugo shortcodes are reusable snippets of content that can be embedded in your Markdown files. They allow you to add dynamic elements like call-outs, tabs, or custom components without repeating code.
 
 To implement shortcodes, you need to define them in your theme or create custom ones. For examples, refer to the [nginx-hugo-theme's exampleSite](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product).
 
@@ -106,7 +83,7 @@ This will run the example site locally, where you can explore various shortcodes
 
 A common shortcode is for call-outs, which highlight important information. Examples can be found in the `call-outs` folder of the exampleSite content: [exampleSite/content/test-product/call-out](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/call-out).
 
-To use a call-out in your RST file, you might use something like:
+To use a call-out in your Markdown file, you might use something like:
 
 ```
 {{< call-out type="note" >}}
