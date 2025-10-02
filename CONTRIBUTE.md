@@ -56,7 +56,9 @@ For more on Hugo, visit [Hugo Documentation](https://gohugo.io/documentation/).
 
 Hugo shortcodes are reusable snippets of content that can be embedded in your Markdown files. They allow you to add dynamic elements like call-outs, tabs, or custom components without repeating code.
 
-To implement shortcodes, you need to define them in your theme or create custom ones. For examples, refer to the [nginx-hugo-theme's exampleSite](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product).
+You can view all Hugo's default shortcodes in their [documentation](https://gohugo.io/content-management/shortcodes/#article).
+
+The following are all callouts supported by the [nginx-hugo-theme](https://github.com/nginxinc/nginx-hugo-theme) and can be viewed in the [exampleSite](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product).
 
 ### Running the Example Site
 
@@ -79,16 +81,105 @@ To see shortcodes in action and understand their usage:
 
 This will run the example site locally, where you can explore various shortcodes.
 
-### Call-Outs Shortcode
+### Callouts
 
-A common shortcode is for call-outs, which highlight important information. Examples can be found in the `call-outs` folder of the exampleSite content: [exampleSite/content/test-product/call-out](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/call-out).
+{{<call-out title="Call-out!">}}
+This is a plain callout with a custom title. Different callouts such as `important`, `caution` and `warning` differ in color and use their corresponding names instead of `call-out`.
+{{</call-out>}}
 
-To use a call-out in your Markdown file, you might use something like:
+{{<call-out sideline="true">}}
+This is a plain side callout with no title. It has a [link](#callouts) to a heading on this page.
+{{</call-out>}}
 
+{{<warning>}}
+This is an example of a warning callout! 
+{{</warning>}}
+
+You can view more callouts, their parameters, and examples [here](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/call-out).
+
+---
+
+### Card sections
+
+{{<card-section>}}
+  {{<card title="Card Section">}}
+    Usually used for featured content.
+  {{</card>}}
+{{</card-section>}}
+
+You can view more card sections, their parameters, and examples [here](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/cards/permitted.md).
+
+---
+
+### Tables
+
+{{<table variant="narrow">}}
+
+| Type                     | Description                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------------|
+| `plain`                  | A pure markdown table, will have the default attributes of `narrow` and `borderless`.|
+| `shortcode`              | Wrapping a table with the `table` shortcode allows for the use of variant and theme. The `variant` parameter can be set to `narrow` or `wide`, while the `theme` parameter can be set to `bordered` or `borderless`.|
+| `examples`               | Examples for all of these can be found at in the [variations.md](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/tables/variations.md?plain=1)|
+
+{{</table>}}
+
+You can view more about tables, including examples, [here](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/tables).
+
+---
+
+### Tab groups
+
+Tab groups can be useful for showcasing steps for different platforms, such as installation via Windows vs macOS.
+
+You can view more tab group examples [here](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/tab-group/tab-group.md?plain=1).
+
+{{<tabs name="Tab Group Example">}}
+
+{{%tab name="Windows"%}}
+
+- **Hugo**: The static site generator. Install from the [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
+  ```bash
+  choco install hugo-extended
+  ```
+
+{{%/tab%}}
+
+{{%tab name="macOS"%}}
+
+- **Hugo**: The static site generator. Install from the [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
+  ```bash
+  brew install hugo
+  ```
+
+{{%/tab%}}
+
+{{</tabs>}}
+
+-----
+
+### Images
+
+Images can be displayed using an `img` shortcode and can use the `grid` attribute to modify their size.
+
+[//]: # "Note: do NOT start image paths with a leading slash (/) when you want them to respect the site's baseURL (for previews with a subpath)."
+[//]: # "A leading slash makes the URL root‑relative and will drop any path component from baseURL."
+[//]: # "For example when previewing a site with a img with src="/F5_Logo.png", instead of f5.com/appworld/labs/preview/path/F5_Logo.png it will be linked to f5.com/appworld/labs/F5_Logo.png"
+
+{{<img src="F5_logo.png" grid="first-third">}}
+
+{{<call-out sideline="true">}}
+Sideline callouts also work with images!
+{{</call-out>}}
+
+You can view more about image variables and examples [here](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/images/image-grid.md?plain=1).
+
+-----
+
+### Code Blocks
+
+```md
+Text inside a code block is copyable through a `Copy` button.
+You can try it out with this code block!
 ```
-{{< call-out type="note" >}}
-This is a note.
-{{< /call-out >}}
-```
 
-Check the [theme documentation](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/) for available shortcodes and their parameters.
+More information and examples for code blocks can be found [here](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/code-blocks).
