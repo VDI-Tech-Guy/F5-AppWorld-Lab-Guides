@@ -2,14 +2,16 @@
 
 This repository uses Hugo as the static site generator with Markdown (md) for content.
 
+Live examples of the following content can be viewed at the [nginx-hugo-theme exampleSite](https://nginxinc.github.io/nginx-hugo-theme/test-product/).
+
 ## Prerequisites
 
 Before contributing, ensure you have the following installed:
 
-- **Hugo**: The static site generator. Install from [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
-  ```
-  brew install hugo
-  ```
+**Hugo**: The static site generator. Install from [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
+```
+brew install hugo
+```
 
 ## Writing Content
 
@@ -60,6 +62,8 @@ You can view all Hugo's default shortcodes in their [documentation](https://gohu
 
 The following are all callouts supported by the [nginx-hugo-theme](https://github.com/nginxinc/nginx-hugo-theme) and can be viewed in the [exampleSite](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product).
 
+Live examples can be found at the hosted [exampleSite](https://nginxinc.github.io/nginx-hugo-theme/test-product/).
+
 ### Running the Example Site
 
 To see shortcodes in action and understand their usage:
@@ -83,17 +87,23 @@ This will run the example site locally, where you can explore various shortcodes
 
 ### Callouts
 
-{{<call-out title="Call-out!">}}
+```
+{{< call-out title="Call-out!" >}}
 This is a plain callout with a custom title. Different callouts such as `important`, `caution` and `warning` differ in color and use their corresponding names instead of `call-out`.
-{{</call-out>}}
+{{</ call-out >}}
+```
 
-{{<call-out sideline="true">}}
+```
+{{< call-out sideline="true" >}}
 This is a plain side callout with no title. It has a [link](#callouts) to a heading on this page.
-{{</call-out>}}
+{{</ call-out >}}
+```
 
-{{<warning>}}
+```
+{{< call-out "warning" >}}
 This is an example of a warning callout! 
-{{</warning>}}
+{{</ call-out >}}
+```
 
 You can view more callouts, their parameters, and examples [here](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/call-out).
 
@@ -101,11 +111,13 @@ You can view more callouts, their parameters, and examples [here](https://github
 
 ### Card sections
 
-{{<card-section>}}
-  {{<card title="Card Section">}}
+```
+{{< card-section >}}
+  {{< card title="Card Section" >}}
     Usually used for featured content.
-  {{</card>}}
-{{</card-section>}}
+  {{</ card >}}
+{{</ card-section >}}
+```
 
 You can view more card sections, their parameters, and examples [here](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/cards/permitted.md).
 
@@ -113,7 +125,8 @@ You can view more card sections, their parameters, and examples [here](https://g
 
 ### Tables
 
-{{<table variant="narrow">}}
+```
+{{< table >}}
 
 | Type                     | Description                                                                          |
 | ------------------------ | -------------------------------------------------------------------------------------|
@@ -121,7 +134,8 @@ You can view more card sections, their parameters, and examples [here](https://g
 | `shortcode`              | Wrapping a table with the `table` shortcode allows for the use of variant and theme. The `variant` parameter can be set to `narrow` or `wide`, while the `theme` parameter can be set to `bordered` or `borderless`.|
 | `examples`               | Examples for all of these can be found at in the [variations.md](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/tables/variations.md?plain=1)|
 
-{{</table>}}
+{{</ table >}}
+```
 
 You can view more about tables, including examples, [here](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product/tables).
 
@@ -133,27 +147,29 @@ Tab groups can be useful for showcasing steps for different platforms, such as i
 
 You can view more tab group examples [here](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/tab-group/tab-group.md?plain=1).
 
-{{<tabs name="Tab Group Example">}}
+```
+{{< tabs name="Tab Group Example" >}}
 
 {{%tab name="Windows"%}}
 
 - **Hugo**: The static site generator. Install from the [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
-  ```bash
+  \`\`\`bash
   choco install hugo-extended
-  ```
+  \`\`\`
 
 {{%/tab%}}
 
 {{%tab name="macOS"%}}
 
 - **Hugo**: The static site generator. Install from the [Hugo Installation Guide](https://gohugo.io/getting-started/installing/).
-  ```bash
+  \`\`\`bash
   brew install hugo
-  ```
+  \`\`\`
 
 {{%/tab%}}
 
-{{</tabs>}}
+{{</ tabs >}}
+```
 
 -----
 
@@ -161,15 +177,18 @@ You can view more tab group examples [here](https://github.com/nginxinc/nginx-hu
 
 Images can be displayed using an `img` shortcode and can use the `grid` attribute to modify their size.
 
-[//]: # "Note: do NOT start image paths with a leading slash (/) when you want them to respect the site's baseURL (for previews with a subpath)."
-[//]: # "A leading slash makes the URL root‑relative and will drop any path component from baseURL."
-[//]: # "For example when previewing a site with a img with src="/F5_Logo.png", instead of f5.com/appworld/labs/preview/path/F5_Logo.png it will be linked to f5.com/appworld/labs/F5_Logo.png"
+Note: do NOT start image paths with a leading slash (/) when you want them to respect the site's baseURL (for previews with a subpath). A leading slash makes the URL root‑relative and will drop any path component from baseURL.
 
-{{<img src="F5_logo.png" grid="first-third">}}
+For example when previewing a site with a img with `src="/F5_Logo.png"`, instead of `f5.com/appworld/labs/preview/path/F5_Logo.png` it will be linked to `f5.com/appworld/labs/F5_Logo.png`
 
-{{<call-out sideline="true">}}
+```
+{{< img src="F5_logo.png" grid="first-third" >}}
+```
+```
+{{< call-out sideline="true" >}}
 Sideline callouts also work with images!
-{{</call-out>}}
+{{</ call-out >}}
+```
 
 You can view more about image variables and examples [here](https://github.com/nginxinc/nginx-hugo-theme/blob/main/exampleSite/content/test-product/images/image-grid.md?plain=1).
 
