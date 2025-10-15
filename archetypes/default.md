@@ -1,13 +1,15 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+# The subtitle displays directly underneath the heading of a given page
+nd-subtitle: 
 # layout: used when specifying `--kind` 
 layout: "default"
 # Weights are assigned in increments of 100: determines sorting order
 weight: i00
 # Creates a table of contents and sidebar
 toc: true
-# Set to true to exclude from build and server unless `--buildDrafts` or `hugo serve -D` are used
-draft: true
+# Set to true to show content here on the landing page. This is only for files with custom content for their landing page (aka _index.md)
+nd-landing-page: false
 ---
 
 [//]: # "This is a markdown comment: it won't appear in the final website"
