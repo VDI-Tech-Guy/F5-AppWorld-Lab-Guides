@@ -15,7 +15,9 @@ brew install hugo
 
 ## Writing Content
 
-Content is written in markdown format and placed in the `content/` directory.
+Content is written in markdown format and placed in the `content/` directory. 
+
+For your convenience and as a starting point, we have developed an archetype located [here](https://github.com/f5devcentral/F5-AppWorld-Lab-Guides/blob/main/archetypes/default.md) that serves as a template. In order to use it, you can run for example `hugo new content/Lab1/Lab1.md` and it will generate a markdown file called `Lab1.md` into `content/Lab1`. If the directory `Lab1` does not exist, it will make a new one. If the directory does exist, it will just place the new file in the existing directory but not rewrite all of the directories content.
 
 ### Frontmatter
 
@@ -39,20 +41,19 @@ Common frontmatter fields:
 - `draft`: Set to true to exclude from build unless `--buildDrafts` is used.
 - `weight`: For ordering pages.
 - `description`: Page description.
-- `keywords`: Array of keywords.
-- `slug`: URL slug.
-- `type`: Content type.
+- `slug`: URL slug. See [here](https://gohugo.io/methods/page/slug/) for visual example.
+- `url`: Overrides the whole URL path.
 
-For a full list of options, see [Hugo Front Matter Documentation](https://gohugo.io/content-management/front-matter/).
+For a full list of options, see [Hugo Front Matter Documentation](https://gohugo.io/content-management/front-matter/). 
 
-Custom parameters can be added under `params`.
+Because in our HTML source code, we can read the frontmatter directly and do something like inject the `title` into a paragraph, if you would like your own frontmatter field, please write an issue on this repo.
 
 ## Building and Testing
 
-- To start a local server: `hugo serve`
+- To start a local server: `hugo serve` or `hugo server`. They are alias of each other.
 - To build the site: `hugo`
 
-For more on Hugo, visit [Hugo Documentation](https://gohugo.io/documentation/).
+For more on commands for CLI, visit [Hugo CLI Documentation](https://gohugo.io/commands/hugo/).
 
 ## Shortcodes
 
@@ -63,27 +64,6 @@ You can view all Hugo's default shortcodes in their [documentation](https://gohu
 The following are all callouts supported by the [nginx-hugo-theme](https://github.com/nginxinc/nginx-hugo-theme) and can be viewed in the [exampleSite](https://github.com/nginxinc/nginx-hugo-theme/tree/main/exampleSite/content/test-product).
 
 Live examples can be found at the hosted [exampleSite](https://nginxinc.github.io/nginx-hugo-theme/test-product/).
-
-### Running the Example Site
-
-To see shortcodes in action and understand their usage:
-
-1. Clone the nginx-hugo-theme repository:
-   ```
-   git clone https://github.com/nginxinc/nginx-hugo-theme.git
-   ```
-
-2. Navigate to the exampleSite directory:
-   ```
-   cd nginx-hugo-theme/exampleSite
-   ```
-
-3. Start the Hugo server:
-   ```
-   hugo serve
-   ```
-
-This will run the example site locally, where you can explore various shortcodes.
 
 ### Callouts
 
