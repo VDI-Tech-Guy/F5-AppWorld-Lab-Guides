@@ -1,0 +1,9 @@
+<div class="lab-cards">
+  {{ range .Page.Sections }}
+    <div class="lab-card">
+      <a href="{{ .RelPermalink }}">
+        <h3>{{ .Title }}</h3>
+      </a>
+    </div>
+  {{ end }}
+</div>
